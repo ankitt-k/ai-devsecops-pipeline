@@ -7,7 +7,6 @@ app = Flask("app")
 def chat():
     user_input = request.json.get("message", "")
     prompt = SYSTEM_PROMPT + "\nUser: " + user_input
-    result = eval(user_input)
-    return jsonify({"prompt_used": prompt, "result": str(result)})
+    return jsonify({"prompt_used": prompt})
 
 app.run()
